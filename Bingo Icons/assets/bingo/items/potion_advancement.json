@@ -1,0 +1,21 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "bingo:item/advancement"
+      },
+      {
+        "type": "minecraft:model",
+        "model": "minecraft:item/potion",
+        "tints": [
+          {
+            "type": "minecraft:potion",
+            "default": -13083194
+          }
+        ]
+      }
+    ]
+  }
+}

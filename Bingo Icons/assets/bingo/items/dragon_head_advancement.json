@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "bingo:item/advancement"
+      },
+      {
+        "type": "minecraft:special",
+        "base": "minecraft:item/dragon_head",
+        "model": {
+          "type": "minecraft:head",
+          "kind": "dragon"
+        }
+      }
+    ]
+  }
+}
