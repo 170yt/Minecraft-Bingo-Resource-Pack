@@ -125,7 +125,7 @@ def generate_advancement_item_models(base_dir, resource_pack_folder, pack_namesp
 
 
 def copy_advancement_icons_from_icon_exporter_mod(base_dir, resource_pack_folder, advancements_per_category):
-    # Get a list of all items (withouth duplicates)
+    # Get a list of all items (without duplicates)
     items = []
     for category, advancements in advancements_per_category.items():
         for advancement in advancements:
@@ -171,7 +171,7 @@ def get_items_from_path(path_to_icons):
     return items
 
 
-def generate_font_file_and_mappping(base_dir, resource_pack_folder):
+def generate_font_file_and_mapping(base_dir, resource_pack_folder):
     START_UNICODE_CHARACTER = 0xE000
     ICON_HEIGHT = 10
     ICON_ASCENT = 9
