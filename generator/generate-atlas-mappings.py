@@ -16,6 +16,7 @@ BLACKLISTED_SUFFIXES = [
     "/crossbow_arrow",
     "/crossbow_firework",
     "/crossbow_standby",
+    "/elytra_broken",
     "/filled_map_markings",
     "/fishing_rod_cast",
     "/spyglass_model",
@@ -54,12 +55,22 @@ def generate_atlas_mappings():
 
             atlas_mappings[item] = sprite
 
+    print(f"Generated {len(atlas_mappings)} atlas mappings.")
+    return atlas_mappings
+
+
+def save_atlas_mappings_to_json(atlas_mappings):
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
         json.dump(atlas_mappings, f, indent=4)
 
-    print(f"Generated {len(atlas_mappings)} atlas mappings ({OUTPUT_FILE})")
+
+def atlas_mappings_to_java_hashmap(atlas_mappings):
+    for item, sprite in atlas_mappings.items():
+        print(f'        sprites.put(Items.{item.replace("minecraft:", "").upper()}, "{sprite}");')
 
 
 if __name__ == "__main__":
-    generate_atlas_mappings()
+    atlas_mappings = generate_atlas_mappings()
+    save_atlas_mappings_to_json(atlas_mappings)
+    # atlas_mappings_to_java_hashmap(atlas_mappings)
